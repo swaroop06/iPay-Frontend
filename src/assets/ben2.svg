@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="30" viewBox="0 0 43 30">
+    <defs>
+        <path id="a" d="M7.6 0h16.8A1.6 1.6 0 0 1 26 1.6V29H6V1.6A1.6 1.6 0 0 1 7.6 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(1)">
+            <use fill="#FFF" xlink:href="#a"/>
+            <path stroke="#012B72" stroke-width="1.2" d="M6.6 28.4h18.8V1.6a1 1 0 0 0-1-1H7.6a1 1 0 0 0-1 1v26.8z"/>
+        </g>
+        <path stroke="#012B72" stroke-width=".55" d="M12.451 14.469h3.046v3.001h-3.046z"/>
+        <path fill="#00B9F5" d="M13.375 15.378h1.199v1.184h-1.199z"/>
+        <path stroke="#012B72" stroke-width=".55" d="M12.451 21.571h3.046v3.001h-3.046z"/>
+        <path fill="#00B9F5" d="M13.375 22.48h1.199v1.184h-1.199z"/>
+        <path stroke="#012B72" stroke-width=".55" d="M19.644 14.469h3.046v3.001h-3.046z"/>
+        <path fill="#00B9F5" d="M20.567 15.378h1.199v1.184h-1.199z"/>
+        <path stroke="#012B72" stroke-width=".55" d="M18.251 14.46h-1.26v2.142h.993v2.473M20.52 18.626h-1.007v1.343M12.176 18.866H15.653v1.311h2.303v1.373M22.695 18.408v1.018H21.03v1.456h1.665M17.57 24.539h3.293v-2.071"/>
+        <path fill="#012B72" d="M21.766 22.48h1.199v1.184h-1.199zM18.769 20.882h1.199v1.184h-1.199zM12.176 19.816h1v1h-1zM16.372 17.745h1v1h-1zM17.571 22.468h1.199v1.184h-1.199z"/>
+        <path stroke="#00B9F5" stroke-linecap="round" stroke-width="1.2" d="M14 6.79h7.038"/>
+        <path stroke="#002974" stroke-linecap="round" stroke-width="1.2" d="M1 28.421h33.765M37.98 28.421h3.64"/>
+    </g>
+</svg>

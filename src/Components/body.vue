@@ -1,0 +1,100 @@
+<template>
+<div class="main">
+<br>
+<b-input-group class="searchbar">
+    
+    <b-form-input placeholder="Search for Products,Movies etc. " class="searchinput"></b-form-input>
+    
+  </b-input-group>
+  
+  
+
+<div class="images">
+<b-container >
+<b-row>
+<b-col sm="4">
+  <router-link to="./movies"><img  src="src/assets/cinema1.jpg"/></router-link>
+</b-col >
+<b-col sm="4">
+  <router-link to="./electricitybills"><img src="src/assets/electricity.jpg"/></router-link>
+</b-col>
+<b-col sm="4">
+  <router-link to="./phonebills"><img src="src/assets/eRecharge.jpg"/></router-link>
+</b-col>
+</b-row>
+<b-row>
+<b-col sm="4">
+  <router-link to="./flights"><img src="src/assets/flight.jpg"/></router-link>
+</b-col>
+<b-col sm="4">
+  <router-link to="./phones"><img src="src/assets/phones.jpg"/></router-link>
+</b-col>
+<b-col sm="4">
+  <router-link to="./buses"><img src="src/assets/bus.jpg"/></router-link>
+</b-col>
+</b-row>
+</b-container>
+</div>
+</div>
+</template>
+
+<script>
+import navbar from './navbar'
+import footer from './footer'
+
+export default {
+  components:{
+      'navbar':navbar,
+      'footer':footer
+      
+  },
+  name: 'app',
+  data () {
+    return {
+     
+    }
+  }
+}
+</script>
+
+<style scoped>
+.main{
+  margin:2%;
+  
+}
+.searchinput{
+  border:black;
+  background:rgba(0,0,0,0.08);
+  border-radius:2px;
+  font-weight: bold;
+  padding:2%;
+  
+}
+.searchinput:focus{
+  border:black;
+}
+.searchbar{
+  
+  margin:0 auto;
+  width:40%;
+}
+.images img{
+  width:100%;
+  height:200px;
+  margin:1%;
+  margin-top:4%;
+  border-radius:5px;
+   transition: box-shadow .3s;
+}
+.images{
+   margin-top:2%;
+}
+.images img:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.5); 
+  
+}
+
+  
+
+
+</style>
