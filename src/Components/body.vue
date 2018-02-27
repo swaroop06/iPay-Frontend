@@ -1,5 +1,5 @@
 <template>
-<div class="main">
+<div class="main" >
 <br>
 <b-input-group class="searchbar">
     
@@ -9,7 +9,7 @@
   
   
 
-<div class="images">
+<div class="images" style="margin-bottom:1%;">
 <b-container >
 <b-row>
 <b-col sm="4">
@@ -35,6 +35,7 @@
 </b-row>
 </b-container>
 </div>
+<foot ></foot>
 </div>
 </template>
 
@@ -45,7 +46,7 @@ import footer from './footer'
 export default {
   components:{
       'navbar':navbar,
-      'footer':footer
+      'foot':footer
       
   },
   name: 'app',
@@ -59,7 +60,7 @@ export default {
 
 <style scoped>
 .main{
-  margin:2%;
+  margin-top:3%;
   
 }
 .searchinput{

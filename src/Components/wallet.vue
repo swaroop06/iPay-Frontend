@@ -14,7 +14,13 @@
     </b-tab>
     
     <b-tab title="Transfer Money">
-       
+        <b-form-input 
+                  type="text"
+                  style="width:40%"
+                  placeholder="Enter the Account number"></b-form-input>
+       <br>
+       <b-button variant="primary">Send Money</b-button>
+
     </b-tab>
     <b-tab title="Passbook">
        

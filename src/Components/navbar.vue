@@ -40,7 +40,7 @@
   </b-collapse>
 </b-navbar>
 <modal name="login" :width="'70%'"
-         :height="'auto'">
+         :height="'auto'" :pivot-y="0.3">
    <div class="modalColor">
     
     <login style="border-radius:10px;" v-on:changestatus="updatestatus($event)"></login>
@@ -108,5 +108,11 @@ img{
     margin:1%;
    
     
+}
+.v--modal-overlay{
+  background:rgba(0,0,0,0.5);
+}
+element.style{
+  border-radius:20px;
 }
 </style>

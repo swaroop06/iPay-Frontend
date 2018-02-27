@@ -2,7 +2,7 @@
 <div class="main">
 <navbar></navbar>
 <router-view></router-view>
-<footer></footer>
+
 
 </div>
 </template>
@@ -14,7 +14,7 @@ import footer from './Components/footer'
 export default {
   components:{
      'navbar':navbar,
-     'footer':footer
+     'foot':footer
       
   },
   name: 'app',

@@ -98,7 +98,7 @@ export default {
       this.personaledit="yes";
     },
     submitpersonal(){
-      bus.$emit('updateinfo','name');
+      bus.$emit('updateinfo','');
       this.personaledit="no";
     },
     editaddress(){
