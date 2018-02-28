@@ -1,6 +1,6 @@
-# anokha-panel-2018
+# iPay
 
-> UI for Anokha 2018 Panel
+> UI for iPay
 
 ## Build Setup
 
