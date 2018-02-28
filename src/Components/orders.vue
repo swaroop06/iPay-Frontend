@@ -51,7 +51,7 @@
 
 
 export default {
- updated(){
+ created(){
     $(document).ready(function () {
        $('#orders').DataTable();
     });
