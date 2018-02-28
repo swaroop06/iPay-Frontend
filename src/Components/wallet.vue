@@ -7,7 +7,15 @@
   <b-tabs pills card>
     <b-tab title="Wallet Balance" active>
       <div>
-      <h6><span style="color:#494949">Wallet Balance: </span> <span style="margin-left:2.5%;">{{walletbalance}}</span></h6>
+      <b-row>
+      <b-col sm="1">
+      <h6>Wallet Balance:</h6>
+      </b-col>
+      <b-col sm="2">
+      <h6>{{walletbalance}}</h6>
+      </b-col>
+      </b-row>
+      
       <b-button variant="info"><b>Add Money to Wallet</b></b-button>
       
       
