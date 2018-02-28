@@ -38,10 +38,7 @@
        </tbody>
       </table>
 
-<modal name="deleted" :width="'70%'"
-         :height="'auto'">
-  <div class="modalColor" >{{msg}}</div>
-</modal>
+
 
 </div>
 
@@ -55,7 +52,6 @@ export default {
     $(document).ready(function () {
        $('#orders').DataTable();
     });
-   
   },
    name: 'app',
   data () {
@@ -84,12 +80,13 @@ export default {
 
 <style scoped>
 .main{
-  
+  box-shadow:0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.1);
   color: rgb(163, 161, 157) !important;
   padding: 2%;
-  margin-top: 3%; 
+  margin: 3%; 
   margin-bottom: 5%;
   border-radius: 10px;
+  background:white;
 }
 .head{
   color:white;

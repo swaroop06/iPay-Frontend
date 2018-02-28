@@ -78,7 +78,11 @@ export default {
   
   margin:0 auto;
   width:40%;
+} 
+.searchbar:focus{
+box-shadow:-5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
 }
+
 .images img{
   width:100%;
   height:200px;
@@ -91,7 +95,7 @@ export default {
    margin-top:2%;
 }
 .images img:hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.5); 
+  box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
   
 }
 

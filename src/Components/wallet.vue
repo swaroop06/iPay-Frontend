@@ -1,25 +1,27 @@
 <template>
 <div class="main">
-<h3 class="mainheader">Wallet</h3>
+
 
 
 <b-card no-body style="margin:2%;">
   <b-tabs pills card>
     <b-tab title="Wallet Balance" active>
       <div>
-      <h6><span style="color:#494949">Wallet Balance: </span> <span style="margin-left:2.5%;">{{walletbalance}}</span></h6><b-button><b>Add Money to Wallet</b></b-button>
+      <h6><span style="color:#494949">Wallet Balance: </span> <span style="margin-left:2.5%;">{{walletbalance}}</span></h6>
+      <b-button variant="info"><b>Add Money to Wallet</b></b-button>
       
       
       </div>
     </b-tab>
     
     <b-tab title="Transfer Money">
-        <b-form-input 
+
+       <b-form-input 
                   type="text"
                   style="width:40%"
                   placeholder="Enter the Account number"></b-form-input>
        <br>
-       <b-button variant="primary">Send Money</b-button>
+       <b-button variant="info">Send Money</b-button>
 
     </b-tab>
     <b-tab title="Passbook">

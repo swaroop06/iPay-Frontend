@@ -27,66 +27,14 @@
         <b-tabs style="margin:2%;">
   <b-tab title="Sign into iPay" active>
     <br>
-    <b-form v-on:submit="login">
-    <div v-if="invalidcred">
-    <h6 class="invalid">Invalid Username or Password</h6>
-    </div>
-    <br>
-    <b-form-input v-model="username"
-                  type="text"
-                  placeholder="Registered iPay Phone Number or Email Address"></b-form-input>
-   
-   <br>
-   <b-form-input  v-model="password"
-                  type="password"
-                  placeholder="Password"></b-form-input>
-   
-   <br>
-   <a href="#" v-on:click="forgotpass">Forgot password?</a>
-   
-   <b-button variant="primary" type="submit" style="float:right" v-on:click="login" >Log In</b-button>
-   </b-form>
+    <login></login>
    </b-tab>
 
 
   <b-tab title="Sign Up" >
     <br>
-    <b-form >
-    <br>
-  <b-form-input   v-model="name"
-                  type="text"
-                  placeholder="Name" required></b-form-input>
-                  <br>
-   
-   <b-form-input  v-model="userphnum"
-                  type="number"
-                  placeholder="Phone Number " required></b-form-input>
-                  
-   <br>
-    <b-form-input v-model="usermail"
-                  type="email"
-                  placeholder="Email Address" required></b-form-input>
-   <br>
-   <b-form-input v-model="userpass"
-                  type="password"
-                  placeholder="Create Password" required></b-form-input>
-                  <br>
-   
-   <b-form-input  v-model="confirmpass"
-                  type="password"
-                  placeholder="Confirm Password" required></b-form-input>
-                  <br>
-   <b-form-file  v-model="validid"
-                  
-                  placeholder="Valid identity proof" required></b-form-file>
-   
-    
-   
-   
-   <br>
-   <b-button variant="primary" style="float:right;width:100%">Proceed</b-button>
-  </b-form>
-  </b-tab>
+    <registration></registration>
+    </b-tab>
   </b-tabs>
   </div>
   
@@ -114,8 +62,14 @@
 <script>
 
 import {bus} from '../main.js';
+import registration from './registration'
+import loginform from './loginforms'
 export default {
-  
+  components:{
+     'registration':registration,
+     'login':loginform
+      
+  },
   
   name: 'app',
   data () {

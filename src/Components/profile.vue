@@ -1,7 +1,6 @@
 <template>
 <div class="main">
-<h3 class="mainheader">Profile</h3>
-<hr>
+
 
 <b-card no-body style="margin:2%;">
   <b-tabs pills card>
@@ -10,11 +9,21 @@
       
       <b-row>
       <b-col>
-      <h6><span style="color:#494949">Name: </span> <span style="margin-left:2.5%;">{{username}}</span></h6>
-      <h6><span style="color:#494949">Email: </span> <span style="margin-left:2.6%;">{{emailid}}</span></h6>
-      <h6><span style="color:#494949">DOB: </span> <span style="margin-left:3%;">{{dob}}</span></h6>
-      <h6><span style="color:#494949">Number: </span><span style="margin-left:0.9%;">{{phonenumber}}</span></h6>
-      <h6><span style="color:#494949">Gender: </span><span style="margin-left:1.5%;">{{gender}}</span></h6>
+      <b-row>
+      <b-col sm="2">
+         <h6><span style="color:#494949">Name: </span></h6>
+         <h6><span style="color:#494949">Email: </span></h6>
+         <h6><span style="color:#494949">DOB: </span> </h6>
+         <h6><span style="color:#494949">Number: </span></h6>
+
+      </b-col sm="3">
+      <b-col>
+       <h6><span>{{username}}</span></h6>
+       <h6><span>{{emailid}}</span></h6>
+      <h6><span>{{dob}}</span></h6>
+      <h6><span>{{phonenumber}}</span></h6>
+      </b-col>
+      </b-row>
       <br>
       <b-button style="background:#d6d6d6;color:#494949;border:#efefef" v-on:click="editpersonal"><b>Edit Personal Information</b></b-button>
       </b-col>
@@ -43,7 +52,15 @@
     <b-tab title="Address">
       
       <div v-if="addressedit ==='no'">
-        <h6><span style="color:#494949">Address: </span><span style="margin-left:1%;">{{address}}</span></h6>
+        <b-row>
+        <b-col sm="1">
+          <h6><span style="color:#494949">Address: </span></h6>
+        </b-col>
+        <b-col sm="2">
+          <h6><span style="margin-left:1%;">{{address}}</span></h6>
+        </b-col>
+        </b-row>
+        
         <br>
         <b-button style="background:#d6d6d6;color:#494949;border:#efefef" v-on:click="editaddress"><b>Edit Address</b></b-button>
       </div>

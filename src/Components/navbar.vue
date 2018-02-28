@@ -71,8 +71,8 @@ export default {
   name: 'app',
   data () {
     return {
-       status:'login',
-       user:'Archer'
+       status:'loggedin',
+       user:' Ronald Archer'
     }
   },
   methods:{
