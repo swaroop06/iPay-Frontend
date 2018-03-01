@@ -2,6 +2,7 @@
 <div class="main">
 <b-form v-on:submit.prevent="register">
     <br>
+    
   <b-form-input   v-model="name"
                   type="text"
                   placeholder="Name" 
@@ -104,7 +105,7 @@ export default {
             u_mail: this.email,
             psw: this.pass,
             cpsw: this.confirmpass,
-            ph_num: parseInt(this.phone_num),
+            ph_num: parseInt(this.phone),
             
             
           }, {

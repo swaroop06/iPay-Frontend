@@ -38,7 +38,7 @@
       <br>
       <b-form-input style="width:30%" v-model="username" type="text"/>
       <br>
-      <b-form-input style="width:30%" v-model="emailid" type="email"/>
+      <b-form-input style="width:30%" v-model="emailid" type="email" readonly/>
       <br>
       <b-form-input style="width:30%" v-model="dob" type="date"/>
       <br> 
@@ -46,7 +46,7 @@
       <br>
       <b-form-input style="width:30%" v-model="gender" type="text"/>
       <br>
-      <b-button variant="danger" v-on:click="submitpersonal"><b>Update</b></b-button>
+      <b-button variant="info" v-on:click="submitpersonal"><b>Update</b></b-button>
       </div>
     </b-tab>
     <b-tab title="Address">
@@ -98,7 +98,7 @@ export default {
        username:'Archer',
        phonenumber:'9944580867',
        emailid:'archer@gmail.com',
-       dob:'06/08/1997',
+       dob:'Add date of birth',
        gender:'Male',
        address:'random address',
        personaledit:'no',
@@ -134,6 +134,7 @@ export default {
   background:#f4f4f4;
   margin:2%;
   border-radius:10px;
+  
 }
 .mainheader{
   text-align:center;

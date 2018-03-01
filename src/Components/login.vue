@@ -38,17 +38,7 @@
   </b-tabs>
   </div>
   
-  <div v-if="forgotpassword" class="credentials">
-  <h5 style="text-align:center">Forgot Password</h5>
-  <br>
-  <b-form-input type="email" placeholder="Enter email address"></b-form-input>
-  <br>
-  <b-button variant="primary" style="float:right;width:100%" v-on:click="sendpass">Proceed</b-button>
-  <br>
-  <br>
-  <h6 v-on:click="goback"><- Back</h6>
-  <br>
-  </div>
+  
   
 </b-col>
 </b-row>

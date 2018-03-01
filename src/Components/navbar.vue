@@ -40,7 +40,7 @@
   </b-collapse>
 </b-navbar>
 <modal name="login" :width="'70%'"
-         :height="'auto'" :pivot-y="0.3">
+         :height="'auto'" :pivot-y="0.3" >
    <div class="modalColor">
     
     <login style="border-radius:10px;" v-on:changestatus="updatestatus($event)"></login>
@@ -64,6 +64,7 @@ export default {
       this.user=data;
     })
   },
+  
   components:{
      'login':login 
       
@@ -71,13 +72,15 @@ export default {
   name: 'app',
   data () {
     return {
-       status:'loggedin',
+       status:'login',
        user:' Ronald Archer'
     }
   },
   methods:{
       logout(){
           this.status='login';
+          this.$session.destroy();
+          
       },
       login(){
           this.$modal.show('login');

@@ -80,7 +80,7 @@ export default {
   width:40%;
 } 
 .searchbar:focus{
-box-shadow:-5.66px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
+box-shadow:-5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
 }
 
 .images img{

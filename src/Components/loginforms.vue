@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import {bus} from '../main.js';
   export default {
     components: {
     },
@@ -52,26 +53,31 @@
           
         } else {
           this.$http.post('http://127.0.0.1/ipay-backend/index.php/users/login', {
-            email: this.email,
-            password: this.pw,
+            uname: this.email,
+            pass: this.pw,
           }, {
             emulateJSON: true
           }).then(response => {
             
             this.$session.start()
-            this.$session.set('jwt', response.body.data.token);
-            this.$session.set('u_mail', response.body.data.email);
-            this.$session.set('psw', response.body.data.password);
+            this.$session.set('jwt', response.body.token);
+            this.$session.set('u_mail', response.body.email);
+            this.$session.set('psw', response.body.password);
            
-            this.$session.set('uname', response.body.data.name);
-            this.$session.set('ph_num', response.body.data.mobile);
+            this.$session.set('uname', response.body.name);
+            this.$session.set('ph_num', response.body.mobile);
+            bus.$emit('changestatus','loggedin');
             this.$router.push('/');
-            console.log("success");
+            
+            if(this.$session.exists())
+            {
+              console.log("success");
+            }
           }, response => {
             if (response.body.error) {
               this.msg = response.body.error;
             } else {
-              this.msg = "Invalid Credentials";
+              this.msg = "There was an error";
               console.log("failure");
             }
             
