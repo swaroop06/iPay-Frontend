@@ -1,7 +1,8 @@
 <template>
+<div>
 <div class="main">
 
-
+<div v-if="msg">
 <b-card no-body >
   <b-tabs pills card >
     <b-tab  title="Personal Information" active>
@@ -77,8 +78,12 @@
     </b-tab>
   </b-tabs>
 </b-card>
+</div>
 
-
+</div>
+<div v-if="!msg">
+  <h2 style="color:#666666;text-align:center">Login into iPay for more features</h2> 
+</div>
 </div>
 </template>
 
@@ -87,9 +92,14 @@
 import {bus} from '../main.js'
 export default {
   created(){
+    if(this.$session.exists())
+    {
+        this.msg=true;          
+    }
     this.username=this.$session.get('uname');
     this.phonenumber=this.$session.get('ph_num');
     this.emailid=this.$session.get('u_mail');
+
   },
   
   components:{
@@ -109,8 +119,8 @@ export default {
        addressedit:'no',
        password:'',
        oldpassword:'',
-       newpassword:''
-
+       newpassword:'',
+       msg:false
 
     }
   },

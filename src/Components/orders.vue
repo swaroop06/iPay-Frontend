@@ -1,7 +1,8 @@
 <template>
-<div class="main">
+<div>
+<div class="main" v-if="msg">
   
-  
+
   <table id="orders" class="table table-hover">
         <thead>
          <tr>
@@ -41,7 +42,10 @@
 
 
 </div>
-
+<div v-if="!msg">
+  <h2 style="color:#666666;text-align:center">Login into iPay for more features</h2> 
+</div>
+</div>
 </template>
 
 <script>
@@ -49,7 +53,10 @@
 
 export default {
  created(){
-    console.log(this.$session.get('uname'));
+     if(this.$session.exists())
+    {
+        this.msg=true;          
+    }
     $(document).ready(function () {
        $('#orders').DataTable();
     });
@@ -64,7 +71,8 @@ export default {
                {name:'random5',id:'ord098',dayoforder:'21-02-2018',dayofdel:'21-02-2018',address:'Random Address',username:'Ronald Archer',modeofpayment:'UPI'},
                 {name:'random6',id:'ord002',dayoforder:'21-02-2018',dayofdel:'21-02-2018',address:'Random Address',username:'Ronald Archer',modeofpayment:'UPI'},
       
-               ]
+               ],
+         msg:false      
 
     }
   },

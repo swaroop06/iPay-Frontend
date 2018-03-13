@@ -12,7 +12,7 @@
         </b-form-input>
       </b-form-group>
       <a href="">Forgot Password</a>
-      <b-button class="sign-btn" variant="info" type="submit">Login</b-button>
+      <b-button class="sign-btn" variant="info" v-on:click="login" type="submit">Login</b-button>
     </b-form>
     </div>
     <div v-if="forgotpassword" class="credentials">
@@ -77,7 +77,7 @@ import {bus} from '../main.js';
             
             if(this.$session.exists())
             {
-              console.log("success");
+              
             }
           }, response => {
             if (response.body.error) {

@@ -24,7 +24,7 @@
           <b-nav-item href="#" class="navitem" style="margin-right:5%"><router-link to="/wallet" style="color:rgba(0,0,0,0.5)" ><b>Wallet</b></router-link></b-nav-item>
           </div>
           
-          <div v-if="!this.$session.exists()">
+          <div v-if="status === 'login'">
           <b-button variant="danger" v-on:click="login"><b>Log In</b></b-button>
           </div>
           <div v-if="this.$session.exists()"> 
@@ -57,7 +57,9 @@ import {bus} from '../main.js'
 export default {
   created(){
     this.username=this.$session.get('uname');
-    
+    if(this.$session.exists()){
+      this.status="loggedin";
+    }
     bus.$on('changestatus',(data)=>{
       this.status=data;
       

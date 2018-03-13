@@ -1,8 +1,9 @@
 <template>
+<div>
 <div class="main">
 
 
-
+<div v-if="msg">
 <b-card no-body >
   <b-tabs pills card>
     <b-tab title="Wallet Balance" active>
@@ -65,12 +66,24 @@
 
 
 </div>
+
+</div>
+<div v-if="!msg">
+  <h2 style="color:#666666;text-align:center">Login into iPay for more features</h2> 
+</div>
+</div>
 </template>
 
 <script>
 
 
 export default {
+  created(){
+     if(this.$session.exists())
+    {
+        this.msg=true;          
+    }
+  },
   components:{
      
       
@@ -79,7 +92,8 @@ export default {
   data () {
     return {
         walletbalance:200.0,
-        money:''
+        money:'',
+        msg:false
 
     }
   },
