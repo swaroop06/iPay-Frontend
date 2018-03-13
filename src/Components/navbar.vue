@@ -13,25 +13,26 @@
     <b-navbar-nav class="ml-auto">
 
        <b-navbar-nav>
-          <div v-if="status === 'loggedin'">
-          <b-nav-item href="#" ><router-link to="/" style="color:rgba(0,0,0,0.5);"><span><b>Home</b></span></router-link></b-nav-item>
+          
+          <div v-if="this.$session.exists()">
+          <b-nav-item href="#" class="navitem"><router-link to="/" style="color:rgba(0,0,0,0.5)" ><span><b>Home</b></span></router-link></b-nav-item>
           </div>
-          <div v-if="status === 'loggedin'">
-          <b-nav-item href="#"><router-link to="/orders" style="color:rgba(0,0,0,0.5);"><b>Orders</b></router-link></b-nav-item>
+          <div v-if="this.$session.exists()">
+          <b-nav-item href="#" class="navitem" ><router-link to="/orders" style="color:rgba(0,0,0,0.5)" ><b>Orders</b></router-link></b-nav-item>
           </div>
-          <div v-if="status === 'loggedin'">
-          <b-nav-item href="#"><router-link to="/wallet" style="color:rgba(0,0,0,0.5);"><b>Wallet</b></router-link></b-nav-item>
+          <div v-if="this.$session.exists()">
+          <b-nav-item href="#" class="navitem" style="margin-right:5%"><router-link to="/wallet" style="color:rgba(0,0,0,0.5)" ><b>Wallet</b></router-link></b-nav-item>
           </div>
           
           <div v-if="status === 'login'">
           <b-button variant="danger" v-on:click="login"><b>Log In</b></b-button>
           </div>
-          <div v-if="status === 'loggedin'"> 
-            <router-link to="/profile"><b-button variant="warning"  ><b>{{user}}</b></b-button></router-link>
+          <div v-if="this.$session.exists()"> 
+            <router-link to="/profile"><b-button  style="background:#254d8c!important;color:white;border:1px solid white;outline:none;box-shadow:none !important" ><b>Account Settings</b></b-button></router-link>
             
            </div>
-           <div v-if="status === 'loggedin'">
-            <router-link to="/"><b-button variant="danger" style="margin-left:5%" class="logout" v-on:click="logout"><b>Log Out</b></b-button></router-link>
+           <div v-if="this.$session.exists()">
+            <router-link to="/"><b-button style="background:#e54c19 !important;color:white;border:1px solid white;outline:none;box-shadow:none !important;margin-left:5%" class="logout" v-on:click="logout"><b>Log Out</b></b-button></router-link>
            </div>
        </b-navbar-nav>
       
@@ -55,6 +56,8 @@ import login from './login'
 import {bus} from '../main.js'
 export default {
   created(){
+    this.username=this.$session.get('uname');
+    
     bus.$on('changestatus',(data)=>{
       this.status=data;
       
@@ -63,8 +66,9 @@ export default {
     bus.$on('updateuser',(data)=>{
       this.user=data;
     })
+     
   },
-  
+ 
   components:{
      'login':login 
       
@@ -72,8 +76,9 @@ export default {
   name: 'app',
   data () {
     return {
-       status:'login',
-       user:' Ronald Archer'
+       username:'',
+       status:'login'
+       
     }
   },
   methods:{
@@ -84,7 +89,8 @@ export default {
       },
       login(){
           this.$modal.show('login');
-      },
+      }
+      
       
   },
   
@@ -117,5 +123,16 @@ img{
 }
 element.style{
   border-radius:20px;
+}
+button{
+  outline:none !important;
+}
+.navitem{
+  text-decoration:none;
+  
+}
+.navitem:hover{
+  text-decoration:none;
+ 
 }
 </style>

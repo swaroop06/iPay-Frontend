@@ -49,6 +49,7 @@
 
 export default {
  created(){
+    console.log(this.$session.get('uname'));
     $(document).ready(function () {
        $('#orders').DataTable();
     });

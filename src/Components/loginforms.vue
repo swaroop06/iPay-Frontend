@@ -59,15 +59,21 @@ import {bus} from '../main.js';
             emulateJSON: true
           }).then(response => {
             
-            this.$session.start()
+            if(response.body.user_id){
+               this.$session.start()
             this.$session.set('jwt', response.body.token);
             this.$session.set('u_mail', response.body.email);
-            this.$session.set('psw', response.body.password);
+            
            
-            this.$session.set('uname', response.body.name);
-            this.$session.set('ph_num', response.body.mobile);
+            this.$session.set('uname', response.body.u_name);
+            this.$session.set('ph_num', response.body.phone);
             bus.$emit('changestatus','loggedin');
             this.$router.push('/');
+            }
+            else{
+              this.msg="Wrong Credentails";
+            }
+            
             
             if(this.$session.exists())
             {
@@ -97,4 +103,10 @@ import {bus} from '../main.js';
 .sign-btn{
     float:right;
 }
+input[type="email"],input[type="password"], textarea {
+outline: none;
+box-shadow:none !important;
+
+}
+  
 </style>

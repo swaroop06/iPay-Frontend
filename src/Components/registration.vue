@@ -105,7 +105,7 @@ export default {
             u_mail: this.email,
             psw: this.pass,
             cpsw: this.confirmpass,
-            ph_num: parseInt(this.phone),
+            ph_num: this.phnum
             
             
           }, {
@@ -155,4 +155,10 @@ export default {
 .main{
  
 }
+input[type="text"],input[type="email"],input[type="number"],input[type="password"],input[type="file"], textarea {
+outline: none;
+box-shadow:none !important;
+
+}
+
 </style>

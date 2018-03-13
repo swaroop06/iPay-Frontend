@@ -3,34 +3,58 @@
 
 
 
-<b-card no-body style="margin:2%;">
+<b-card no-body >
   <b-tabs pills card>
     <b-tab title="Wallet Balance" active>
       <div>
       <b-row>
-      <b-col sm="1">
+      <b-col sm="2">
       <h6>Wallet Balance:</h6>
       </b-col>
       <b-col sm="2">
-      <h6>{{walletbalance}}</h6>
+      <h6 style="color:black">₹ {{walletbalance}}</h6>
+      </b-col>
+      <b-col sm="1">
+      
+      </b-col>
+      </b-row>
+      <b-btn v-b-toggle.collapse1 variant="info">Add Money to your wallet</b-btn>
+      
+
+  <b-collapse id="collapse1" class="mt-2">
+    <b-card>
+      
+       <b-row>
+       <b-col>
+      <b-input placeholder="Enter amount to send"  v-model="money" type="number" ></b-input>
+      </b-col>
+      <b-col>
+         <b-button variant="info" v-on:click="addmoney">Add Money</b-button>
       </b-col>
       </b-row>
       
-      <b-button variant="info"><b>Add Money to Wallet</b></b-button>
+    </b-card>
+  </b-collapse>
       
       
       </div>
     </b-tab>
     
     <b-tab title="Transfer Money">
+       
+       <b-row>
+       <b-col>
 
        <b-form-input 
-                  type="text"
-                  style="width:40%"
+                  type="number"
+                  
                   placeholder="Enter the Account number"></b-form-input>
-       <br>
+       </b-col>
+       <b-col>
        <b-button variant="info">Send Money</b-button>
-
+       </b-col>
+       </b-row>
+       
     </b-tab>
     <b-tab title="Passbook">
        
@@ -54,8 +78,8 @@ export default {
   name: 'app',
   data () {
     return {
-        walletbalance:'200.0'
-
+        walletbalance:200.0,
+        money:''
 
     }
   },
@@ -71,6 +95,9 @@ export default {
     },
     submitaddress(){
       this.addressedit="no";
+    },
+    addmoney(){
+      this.walletbalance=parseInt(this.walletbalance+this.money);
     }
 
   }
@@ -80,8 +107,13 @@ export default {
 <style scoped>
 .main{
   background:#f4f4f4;
-  margin:2%;
-  border-radius:10px;
+  box-shadow:0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(163, 161, 157) !important;
+  
+  margin: 3%; 
+  margin-bottom: 5%;
+  border-radius: 15px;
+  background:white;
 }
 .mainheader{
   text-align:center;
@@ -92,5 +124,22 @@ hr{
     background: #3cc1b4;
     height: 4px;
 }
-
+input[type="number"]
+{
+  outline:none;
+  box-shadow:none;
+  border:1px solid white;
+   background:rgba(0,0,0,0.08);
+  border-radius:5px;
+  font-weight: bold;  
+  
+}
+input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+ .card{
+   border:1px solid white;
+ } 
 </style>

@@ -3,7 +3,7 @@
 <br>
 <b-input-group class="searchbar">
     
-    <b-form-input placeholder="Search for Products,Movies etc. " class="searchinput"></b-form-input>
+    <b-form-input placeholder=" Search for Products,Movies etc. " class="searchinput"></b-form-input>
     
   </b-input-group>
   
@@ -13,7 +13,7 @@
 <b-container >
 <b-row>
 <b-col sm="4">
-  <router-link to="./movies"><img  src="src/assets/cinema1.jpg"/></router-link>
+  <router-link to="./electricitybills"><img src="src/assets/cinema1.jpg"/></router-link>
 </b-col >
 <b-col sm="4">
   <router-link to="./electricitybills"><img src="src/assets/electricity.jpg"/></router-link>
@@ -69,13 +69,14 @@ export default {
   border-radius:2px;
   font-weight: bold;
   padding:2%;
+  border-radius:10px;
   
 }
 .searchinput:focus{
   border:black;
 }
 .searchbar{
-  
+  border-radius:10px;
   margin:0 auto;
   width:40%;
 } 
@@ -88,7 +89,7 @@ box-shadow:-5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
   height:200px;
   margin:1%;
   margin-top:4%;
-  border-radius:5px;
+  border-radius:10px;
    transition: box-shadow .3s;
 }
 .images{
@@ -98,7 +99,11 @@ box-shadow:-5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
   box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
   
 }
+input[type="text"], textarea {
+outline: none;
+box-shadow:none !important;
 
+}
   
 
 
