@@ -64,7 +64,7 @@ import {bus} from '../main.js';
             this.$session.set('jwt', response.body.token);
             this.$session.set('u_mail', response.body.email);
             
-           
+            this.$session.set('wallet',response.body.wallet);
             this.$session.set('uname', response.body.u_name);
             this.$session.set('ph_num', response.body.phone);
             bus.$emit('changestatus','loggedin');

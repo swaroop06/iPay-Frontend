@@ -1,8 +1,8 @@
 <template>
 <div>
-<div class="main">
+<div class="main"  v-if="msg">
 
-<div v-if="msg">
+
 <b-card no-body >
   <b-tabs pills card >
     <b-tab  title="Personal Information" active>
@@ -78,7 +78,7 @@
     </b-tab>
   </b-tabs>
 </b-card>
-</div>
+
 
 </div>
 <div v-if="!msg">
@@ -150,7 +150,7 @@ export default {
   
   margin: 3%; 
   margin-bottom: 5%;
-  border-radius: 15px;
+  border-radius: 10px;
   background:white;
   
 }

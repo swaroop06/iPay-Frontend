@@ -96,7 +96,7 @@ box-shadow:-5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
    margin-top:2%;
 }
 .images img:hover{
-  box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2); 
+   box-shadow:0px 4px 16px 0px rgba(0,0,0,0.5);
   
 }
 input[type="text"], textarea {

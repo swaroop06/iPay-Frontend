@@ -10,7 +10,7 @@
       <div>
       <b-row>
       <b-col sm="2">
-      <h6>Wallet Balance:</h6>
+      <h6 style="color:black">Wallet Balance:</h6>
       </b-col>
       <b-col sm="2">
       <h6 style="color:black">₹ {{walletbalance}}</h6>
@@ -83,6 +83,7 @@ export default {
     {
         this.msg=true;          
     }
+    this.walletbalance=this.$session.get('wallet');
   },
   components:{
      
@@ -91,7 +92,7 @@ export default {
   name: 'app',
   data () {
     return {
-        walletbalance:200.0,
+        walletbalance:'',
         money:'',
         msg:false
 
