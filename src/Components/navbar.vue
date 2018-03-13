@@ -24,7 +24,7 @@
           <b-nav-item href="#" class="navitem" style="margin-right:5%"><router-link to="/wallet" style="color:rgba(0,0,0,0.5)" ><b>Wallet</b></router-link></b-nav-item>
           </div>
           
-          <div v-if="status === 'login'">
+          <div v-if="!this.$session.exists()">
           <b-button variant="danger" v-on:click="login"><b>Log In</b></b-button>
           </div>
           <div v-if="this.$session.exists()"> 
