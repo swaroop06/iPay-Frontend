@@ -112,7 +112,7 @@ export default {
       this.addressedit="no";
     },
     addmoney(){
-      this.walletbalance=parseInt(this.walletbalance+this.money);
+      this.walletbalance=parseInt(this.walletbalance) - (-this.money);
     }
 
   }
